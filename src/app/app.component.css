@@ -1,22 +1,76 @@
-/* Application-wide Styles */
+/* AppComponent's private CSS styles */
 h1 {
-    color: rgb(255, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
+  margin-bottom: 0;
+}
+nav a {
+  padding: 1rem;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: rgb(0, 0, 0);
+  background-color: #ff0000;
+}
+nav a.active {
+  background-color: black;
+}
+DashboardComponent
+src/app/dashboard/dashboard.component.html
+src/app/dashboard/dashboard.component.ts
+src/app/dashboard/dashboard.component.css
+content_copy
+/* DashboardComponent's private CSS styles */
+
+h2 {
+  text-align: center;
+}
+
+.heroes-menu {
+  padding: 0;
+  margin: auto;
+  max-width: 1000px;
+
+  /* flexbox */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+a {
+  background-color: #3f525c;
+  border-radius: 2px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-width: 70px;
+  margin: .5rem auto;
+  box-sizing: border-box;
+
+  /* flexbox */
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+@media (min-width: 600px) {
+  a {
+    width: 18%;
+    box-sizing: content-box;
   }
-  h2, h3 {
-    color: #444;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-  body {
-    margin: 2em;
-  }
-  body, input[type="text"], button {
-    color: #333;
-    font-family: Cambria, Georgia, serif;
-  }
-  /* everywhere else */
-  * {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+}
+
+a:hover {
+  background-color: #000;
+}
