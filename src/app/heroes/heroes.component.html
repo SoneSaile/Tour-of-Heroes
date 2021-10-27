@@ -4,6 +4,11 @@
     <li *ngFor="let hero of heroes">
         <a routerLink="/detail/{{hero.id}}">
             <span class="badge">{{hero.id}}</span> {{hero.localized_name}}
+            <ul>Primary attribute: {{hero.primary_attr}}</ul>
+            <ul>Attack type: {{hero.attack_type}}</ul>
+            <ul>Roles: {{hero.roles}}</ul>
+            <ul>Legs: {{hero.legs}}</ul>
+
         </a>
     </li>
 </ul>

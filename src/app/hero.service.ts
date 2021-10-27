@@ -12,7 +12,9 @@ export class HeroService {
 
   constructor(
     private messageService: MessageService,
-    private http: HttpClient) { }
+    private http: HttpClient) { 
+      
+    }
   
   httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,20 +24,20 @@ export class HeroService {
   }
   private heroesUrl = 'https://api.opendota.com/api/heroes/';
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      this.log(`${operation} failed: ${error.message}`);
-      return of(result as T);
-    };
-  }
-
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
     .pipe(
       tap(_ => this.log('fetched heroes')),
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      this.log(`${operation} failed: ${error.message}`);
+      return of(result as T);
+    };
   }
 
   getHero(id: number): Observable<Hero> {

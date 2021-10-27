@@ -3,7 +3,7 @@
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
-    width: 15em;
+    background-color: #b3b3b3;
   }
   
   input {
@@ -17,6 +17,8 @@
   .heroes li {
     position: relative;
     cursor: pointer;
+    display: inline-block;
+    margin: 0.5em;
   }
   
   .heroes li:hover {
@@ -31,7 +33,7 @@
     padding: .3em 0;
     height: 1.6em;
     border-radius: 4px;
-    display: block;
+    display: inline-block;
     width: 100%;
   }
   
