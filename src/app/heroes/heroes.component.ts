@@ -23,6 +23,9 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes()
         .subscribe(heroes => this.heroes = heroes);
+        this.heroes.forEach(hero => {
+          hero.img = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png";
+        });
   }
 
 }
