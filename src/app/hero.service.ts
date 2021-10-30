@@ -25,7 +25,7 @@ export class HeroService {
   private heroesUrl = 'https://api.opendota.com/api/heroes/';
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
+   return this.http.get<Hero[]>(this.heroesUrl)
     .pipe(
       tap(_ => this.log('fetched heroes')),
       catchError(this.handleError<Hero[]>('getHeroes', []))
