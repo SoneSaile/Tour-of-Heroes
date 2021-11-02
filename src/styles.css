@@ -1,2 +1,4 @@
-html, body { height: 100%; }
+html, body { height: 100%;
+    background-color: rgb(44, 44, 44);
+}
 body { margin: 5px; font-family: Roboto, "Helvetica Neue", sans-serif; }
