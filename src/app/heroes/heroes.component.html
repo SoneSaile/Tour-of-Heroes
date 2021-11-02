@@ -1,5 +1,8 @@
 <h2>Welcome to the new stage of history</h2>
-<div class="heroes" *ngFor="let hero of heroes">
+<div class="heroes" *ngFor="let hero of heroes$ | async">
   <img class="badge" src="assets/{{hero.id}}.png"/>
   <h1>{{hero.localized_name}}</h1>
+  <ul>Primary Attribute: {{hero.primary_attr}}</ul>
+  <ul>Attack type: {{hero.attack_type}}</ul>
+  <ul>Roles: {{hero.roles}}</ul>
 </div>
