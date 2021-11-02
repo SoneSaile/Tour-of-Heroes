@@ -1,26 +1,5 @@
 <h2>Welcome to the new stage of history</h2>
-
-<ul class="heroes">
-        <mat-grid-list cols="2">
-            <mat-grid-tile *ngFor="let hero of heroes">
-              <mat-card class="dashboard-card">
-                <mat-card-header>
-                  <mat-card-title>
-                    <span class="badge">{{hero.id}}</span> {{hero.localized_name}}
-                  </mat-card-title>
-                </mat-card-header>
-                <mat-card-content class="dashboard-card-content">
-                    <div>
-                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png"/>
-                    </div>              
-                    <div>
-                        <ul>Primary attribute: {{hero.primary_attr}}</ul>
-                        <ul>Attack type: {{hero.attack_type}}</ul>
-                        <ul>Roles: {{hero.roles}}</ul>
-                        <ul>Legs: {{hero.legs}}</ul>  
-                    </div>    
-                </mat-card-content>
-              </mat-card>
-            </mat-grid-tile>
-          </mat-grid-list>
-</ul>
+<div class="heroes" *ngFor="let hero of heroes">
+  <img class="badge" src="assets/{{hero.id}}.png"/>
+  <h1>{{hero.localized_name}}</h1>
+</div>

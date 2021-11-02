@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
-
+import { Hero } from '../Model/hero.model';
+import { HeroService } from '../services/hero.service';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -11,21 +10,33 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent implements OnInit {
 
-  selectedHero?: Hero;
-  heroes: Hero[] = [];
-
-  constructor(private heroService: HeroService, private messageService: MessageService) {  }
-
-  ngOnInit(): void {
+  heroes: any;
+  erro : any;
+  constructor(private heroService: HeroService, private messageService: MessageService) {
     this.getHeroes();
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
-        this.heroes.forEach(hero => {
-          hero.img = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png";
-        });
+  ngOnInit(): void {
   }
 
+  getHeroes() {
+    this.heroService.getHeroes().subscribe(
+      (data : Hero) =>{
+        this.heroes = data;
+        console.log("O data que recebemos", data);
+        console.log("Variável preenchida", this.heroes);
+        this.heroes.forEach((hero: any) => {
+          hero.img = "/assets/heroesImages/1.png";
+        });
+      }, 
+      (error: any) => {
+        this.erro = error;
+        console.error('ERROR: ', error);
+      }
+    );
+  }
+
+  getHeroesImages() {
+    
+  }
 }

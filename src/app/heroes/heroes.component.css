@@ -1,52 +1,23 @@
 /* HeroesComponent's private CSS styles */
 .heroes {
-    margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;
-    background-color: #b3b3b3;
-  }
-  
-  input {
-    display: block;
-    width: 100%;
-    padding: .5rem;
-    margin: 1rem 0;
-    box-sizing: border-box;
-  }
-  
-  .heroes a {
-    color: rgb(255, 0, 0);
-    text-decoration: none;
-    background-color: rgb(0, 0, 0);
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
+    margin: 1em;
+    padding: 1em;
+    background-color: #3a3a3a;
+    width: 20%;
     display: inline-block;
-    width: 100%;
-  }
-  
-  .heroes a:hover {
-    color: #2c3a41;
-    background-color: #e6e6e6;
-  }
-  
-  .heroes a:active {
-    background-color: #525252;
-    color: #fafafa;
-  }
+    align-items: center;
+    text-align: center;
+  }  
   
   .heroes .badge {
     display: inline-block;
     font-size: small;
     color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color:#ff0000;
     line-height: 1em;
     position: relative;
     left: -1px;
     top: -4px;
-    height: 1.8em;
+    height: 3em;
     min-width: 16px;
     text-align: right;
     margin-right: .8em;
